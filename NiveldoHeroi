@@ -1,0 +1,39 @@
+// Função para criar o objeto Heroi com nomes e XP
+function criarHeroi() {
+  return {
+    "felipe": 2000,
+    "Diana": 8000,
+    "peter": 9000,
+    "Natasha": 900
+  };
+}
+// Função para determinar e imprimir o nível dos heróis
+function Nivel_Heroi() {
+  const Heroi = criarHeroi();
+//Itera sobre cada par [nome, XP] no objeto Heroi
+  for (const [nome, XP] of Object.entries(Heroi)) {
+    let nivelDoHeroi = ""; // Inicializa a variável para armazenar o nível do herói
+
+    // Determina o nível do herói com base no XP
+
+    if (XP < 1000) {
+      nivelDoHeroi = "Ferro";
+    } else if (XP >= 1001 && XP <= 2000) {
+      nivelDoHeroi = "Bronze";
+    } else if (XP >= 2001 && XP <= 5000) {
+      nivelDoHeroi = "Prata";
+    } else if (XP >= 5001 && XP <= 7000) {
+      nivelDoHeroi = "Ouro";
+    } else if (XP >= 7001 && XP <= 8000) {
+      nivelDoHeroi = "Ascendente";
+    } else if (XP >= 8001 && XP <= 9000) {
+      nivelDoHeroi = "Imortal";
+    } else {
+      nivelDoHeroi = "Radiante";
+    }
+
+    console.log(`O Herói de nome ${nome} está no nível de ${nivelDoHeroi}`);
+  }
+}
+
+Nivel_Heroi();
